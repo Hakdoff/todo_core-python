@@ -75,11 +75,7 @@ WSGI_APPLICATION = 'todo_core.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.parse(
-        "postgresql://database_bxpu_user:wf2ICYzn5oiMk8GRnlOKRvszkUAKeAe9@dpg-cs8vtg5ds78s73c6ifmg-a.singapore-postgres.render.com/database_bxpu",
-        conn_max_age=600,
-        ssl_require=True  # Use `ssl_require=True` if connecting over SSL is necessary.
-    )
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 # DATABASES = {
